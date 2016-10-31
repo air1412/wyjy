@@ -154,7 +154,7 @@ function GZ(){
 	tButton[0].onclick = function(){
 		var username1 = hex_md5(tInput[0].value);
 		var password1 = hex_md5(tInput[1].value);
-		get('http://study.163.com/webDev/login.htm',{userName:username1,password:password1},function(a){ 
+		get('https://study.163.com/webDev/login.htm',{userName:username1,password:password1},function(a){ 
 			if( a === '1' ){
 				tDLCK.style.display = 'none';
 				setcookie('loginSuc','1');
@@ -167,7 +167,7 @@ function GZ(){
 
 	//关注验证
 	function GZYZ(){
-		get('http://study.163.com/webDev/attention.htm','', function(b){
+		get('https://study.163.com/webDev/attention.htm','', function(b){
 			if( b === '1' ){
 				setcookie('followSuc','1',365);
 				tGZ.style.display = 'none';
@@ -285,7 +285,7 @@ CPSJ[1].onclick = function(){
 
 //获取课程卡片数据
 function ZCNR(num){
-	get('http://study.163.com/webDev/couresByCategory.htm',{pageNo:1,psize:20,type:num},function(data){
+	get('https://study.163.com/webDev/couresByCategory.htm',{pageNo:1,psize:20,type:num},function(data){
 		var data = JSON.parse(data);
 		var tLB = $('LB');
 		var tLi = tLB.getElementsByTagName('li');		
@@ -332,7 +332,7 @@ function videoshow(){
 	var tVd = tSide.getElementsByTagName('video');
 	tVshow[0].onclick = function(){
 		tIvideo[0].style.display = 'block';
-		tVd[0].src = 'http://mov.bn.netease.com/open-movie/nos/mp4/2014/12/30/SADQ86F5S_shd.mp4';
+		tVd[0].src = 'https://mov.bn.netease.com/open-movie/nos/mp4/2014/12/30/SADQ86F5S_shd.mp4';
 	};
 	tCV[0].onclick = function(){
 		tIvideo[0].style.display = 'none';
@@ -343,7 +343,7 @@ function videoshow(){
 
 //最热排行
 function ZRPH(){
-	get('http://study.163.com/webDev/hotcouresByCategory.htm','',function(data){
+	get('https://study.163.com/webDev/hotcouresByCategory.htm','',function(data){
 		var data = JSON.parse(data);
 		var tHL = $('HL');
 		var tHLli = tHL.getElementsByTagName('li');
